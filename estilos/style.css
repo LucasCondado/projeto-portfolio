@@ -64,6 +64,10 @@ display: grid;
 grid-template-columns: auto 90vw auto;
 }
 
+section {
+    margin-bottom: 20px;
+}
+
 section#ficha {
   background-color: var(--fundo-card);
   padding: 20px;
@@ -109,4 +113,85 @@ div#social a:hover {
 
 div#social a:hover {
   color: var(--destaque-inverso);
+}
+
+section#detalhes {
+  grid-column: 2;
+}
+
+article {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+article h2 {
+  color: var(--destaque);
+  margin-bottom: 10px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  aspect-ratio: 16/9;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+#skill-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+#skill-container .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#skill-container .nome {
+  font-weight: bold;
+  color: var(--texto);
+}
+
+#skill-container .porcent {
+  font-weight: bold;
+  color: var(--destaque);
+}
+
+#skill-container .barra {
+  width: 100%;
+  height: 8px;
+  background-color: var(--fundo-principal);
+  border-radius: 4px;
+}
+
+#skill-container .progresso {
+  height: 100%;
+  background-color: var(--destaque-inverso);
+}
+
+/* Corrigindo a chave e a lógica */
+@media screen and (min-width: 768px) {
+  #skill-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    column-gap: 50px; /* Espaço entre a coluna da esquerda e da direita */
+  }
+
+  /* Faz cada texto e cada barra ocupar apenas uma "celula" do grid */
+  /* O grid vai preencher automaticamente: 
+     Linha 1: Nome HTML5 | Nome CSS3
+     Linha 2: Barra HTML5 | Barra CSS3 
+  */
 }
