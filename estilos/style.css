@@ -261,24 +261,49 @@ footer a {
 
 /* Corrigindo a chave e a lógica */
 @media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: auto 300px 1fr auto;
+    margin: 20px;
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    margin: 0 20px 0 20px;
+    height: fit-content;
+    position: sticky;
+    top: 65px;
+  }
+
+  section#ficha a {
+    margin: 40px 0 30px 0;
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
+  
   #skill-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Duas colunas */
     column-gap: 50px; /* Espaço entre a coluna da esquerda e da direita */
   }
 
-  #projeto-container .projeto {
+ #projeto-container .projeto {
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center; /* Isso centraliza a imagem e o texto verticalmente, deixando o card elegante */
   }
 
   #projeto-container .projeto-info {
-    max-width: 80%;
+    flex: 1; /* O SEGREDO: diz para o texto "ocupar todo o espaço que sobrar" */
+    /* Apague a linha do max-width: 80% */
   }
 
   #projeto-container .foto {
-    aspect-ratio: 1/1;
-    max-width: 20%;
-    max-height: 200px;
+    width: 250px; /* Em vez de %, damos uma largura fixa para a imagem no desktop */
+    aspect-ratio: 16/9; /* Voltei para 16/9 para ficar retangular, mas se quiser quadrado mude para 1/1 */
+    flex-shrink: 0; 
+    object-fit: cover; 
   }
 }
